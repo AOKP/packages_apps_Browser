@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
+ * Copyright (c) 2012, Code Aurora Forum. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,6 +111,23 @@ public class NetworkStateHandler {
 
     boolean isNetworkUp() {
         return mIsNetworkUp;
+    }
+
+    boolean isWifiUp() {
+        ConnectivityManager cm = (ConnectivityManager) mActivity
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        if (info != null) {
+            switch (info.getType()) {
+                case ConnectivityManager.TYPE_WIFI:
+                case ConnectivityManager.TYPE_ETHERNET:
+                case ConnectivityManager.TYPE_BLUETOOTH:
+                    return true;
+                default:
+                    return false;
+            }
+        } else
+            return false;
     }
 
     private void sendNetworkType(String type, String subtype) {

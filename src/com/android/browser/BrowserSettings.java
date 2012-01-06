@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011 The Android Open Source Project
+ * Copyright (c) 2011, 2012, Code Aurora Forum. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -910,6 +911,22 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
 
     public String getLinkPrefetchEnabled() {
         return mPrefs.getString(PREF_LINK_PREFETCH, getDefaultLinkPrefetchSetting());
+    }
+
+    public String getVideoPreloadOnWifiOnlyPreferenceString() {
+        return mContext.getResources().getString(R.string.pref_video_preload_value_wifi_only);
+    }
+
+    public String getVideoPreloadAlwaysPreferenceString() {
+        return mContext.getResources().getString(R.string.pref_video_preload_value_always);
+    }
+
+    public String getDefaultVideoPreloadSetting() {
+        return mContext.getResources().getString(R.string.pref_video_preload_default_value);
+    }
+
+    public String getVideoPreloadEnabled() {
+        return mPrefs.getString(PREF_VIDEO_PRELOAD, getDefaultVideoPreloadSetting());
     }
 
     // -----------------------------

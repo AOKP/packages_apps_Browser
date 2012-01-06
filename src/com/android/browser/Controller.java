@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
+ * Copyright (c) 2011, 2012, Code Aurora Forum. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -842,6 +843,15 @@ public class Controller
         if (!mNetworkHandler.isNetworkUp()) {
             view.setNetworkAvailable(false);
         }
+
+        WebSettings settings = view.getSettings();
+        String preload = mSettings.getVideoPreloadEnabled();
+        if (mSettings.getVideoPreloadAlwaysPreferenceString().equals(preload))
+            settings.setMediaPreloadEnabled(true);
+        else if (mSettings.getVideoPreloadOnWifiOnlyPreferenceString().equals(preload))
+            settings.setMediaPreloadEnabled(mNetworkHandler.isWifiUp());
+        else
+            settings.setMediaPreloadEnabled(false);
 
         // when BrowserActivity just starts, onPageStarted may be called before
         // onResume as it is triggered from onCreate. Call resumeWebViewTimers
