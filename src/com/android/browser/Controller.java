@@ -503,8 +503,9 @@ public class Controller
                                 break;
                             case R.id.open_newtab_context_menu_id:
                                 final Tab parent = mTabControl.getCurrentTab();
-                                openTab(url, parent,
-                                        !mSettings.openInBackground(), true);
+                                boolean privateBrowsing = msg.arg2 == 1;
+                                openTab(url, parent != null && privateBrowsing,
+                                        !mSettings.openInBackground(), true, parent);
                                 break;
                             case R.id.copy_link_context_menu_id:
                                 copy(url);
@@ -1400,6 +1401,42 @@ public class Controller
                                         openTab(extra, parent,
                                                 !mSettings.openInBackground(),
                                                 true);
+                                        return true;
+                                    }
+                                });
+                    }
+                }
+                newTabItem = menu.findItem(R.id.open_newtab_incognito_context_menu_id);
+                newTabItem.setTitle(getSettings().openInBackground()
+                        ? R.string.contextmenu_openlink_incognito_newwindow_background
+                                : R.string.contextmenu_openlink_incognito_newwindow);
+                newTabItem.setVisible(showNewTab);
+                newTabItem.setVisible(!mTabControl.getCurrentTab().isPrivateBrowsingEnabled());
+                if (showNewTab) {
+                    if (WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE == type) {
+                        newTabItem.setOnMenuItemClickListener(
+                                new MenuItem.OnMenuItemClickListener() {
+                                    @Override
+                                    public boolean onMenuItemClick(MenuItem item) {
+                                        final HashMap<String, WebView> hrefMap =
+                                            new HashMap<String, WebView>();
+                                        hrefMap.put("webview", webview);
+                                        final Message msg = mHandler.obtainMessage(
+                                                FOCUS_NODE_HREF,
+                                                R.id.open_newtab_context_menu_id,
+                                                1, hrefMap);
+                                        webview.requestFocusNodeHref(msg);
+                                        return true;
+                                    }
+                                });
+                    } else {
+                        newTabItem.setOnMenuItemClickListener(
+                                new MenuItem.OnMenuItemClickListener() {
+                                    @Override
+                                    public boolean onMenuItemClick(MenuItem item) {
+                                        final Tab parent = mTabControl.getCurrentTab();
+                                        openTab(extra, parent != null,
+                                                !mSettings.openInBackground(), true, parent);
                                         return true;
                                     }
                                 });
