@@ -234,6 +234,12 @@
     <!-- Context Menu item to open the currently selected link in a new
          background window. [CHAR LIMIT=50] -->
     <string name="contextmenu_openlink_newwindow_background">Open in new background tab</string>
+    <!-- Context Menu item to open the currently selected link in a new
+            incognito window. -->
+    <string name="contextmenu_openlink_incognito_newwindow">Open in new incognito tab</string>
+    <!-- Context Menu item to open the currently selected link in a new
+         background window. [CHAR LIMIT=50] -->
+    <string name="contextmenu_openlink_incognito_newwindow_background">Open in new incognito background tab</string>
     <!-- Context Menu item to save the webpage referred to by this link to the
             SD card (external storage) -->
     <string name="contextmenu_savelink">Save link</string>
