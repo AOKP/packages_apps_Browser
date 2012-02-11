@@ -25,6 +25,14 @@
             android:summary="@string/pref_content_search_engine_summary"
             android:dialogTitle="@string/pref_content_search_engine" />
 
+    <ListPreference
+        android:key="user_agent"
+        android:title="@string/pref_content_uastring"
+        android:entries="@array/pref_content_ua_choices"
+        android:summary="@string/pref_content_uastring_summary"
+        android:entryValues="@array/pref_content_ua_values"
+        android:defaultValue="0" />
+
     <CheckBoxPreference
             android:key="open_in_background"
             android:defaultValue="false"
