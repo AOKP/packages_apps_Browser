@@ -109,6 +109,7 @@ public abstract class BaseUi implements UI {
 
     private boolean mActivityPaused;
     protected boolean mUseQuickControls;
+    protected boolean mUseQuickControlsExt;
     protected TitleBar mTitleBar;
     private NavigationBarBase mNavigationBar;
 

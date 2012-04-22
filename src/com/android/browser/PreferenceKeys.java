@@ -81,6 +81,7 @@ public interface PreferenceKeys {
     // Keys for lab_preferences.xml
     // ----------------------
     static final String PREF_ENABLE_QUICK_CONTROLS = "enable_quick_controls";
+    static final String PREF_ENABLE_QUICK_CONTROLS_EXT = "enable_quick_controls_ext";
     static final String PREF_FULLSCREEN = "fullscreen";
 
     // ----------------------
