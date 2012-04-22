@@ -21,4 +21,9 @@
         android:defaultValue="false"
         android:title="@string/pref_lab_quick_controls"
         android:summary="@string/pref_lab_quick_controls_summary" />
+    <CheckBoxPreference
+        android:key="enable_quick_controls_ext"
+        android:defaultValue="false"
+        android:title="@string/pref_lab_quick_controls_ext"
+        android:summary="@string/pref_lab_quick_controls_ext_summary" />
 </PreferenceScreen>

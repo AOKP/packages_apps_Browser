@@ -119,6 +119,11 @@ public class XLargeUi extends BaseUi {
         updateUrlBarAutoShowManagerTarget();
     }
 
+    @Override
+    public void setUseQuickControlsExt(boolean useQuickControlsExt) {
+
+    }
+
     private void checkTabCount() {
         if (mUseQuickControls) {
             mHandler.post(new Runnable() {

@@ -68,6 +68,7 @@ public class PhoneUi extends BaseUi {
     public PhoneUi(Activity browser, UiController controller) {
         super(browser, controller);
         setUseQuickControls(BrowserSettings.getInstance().useQuickControls());
+        setUseQuickControlsExt(BrowserSettings.getInstance().useQuickControlsExt());
         mNavigationBar = (NavigationBarPhone) mTitleBar.getNavigationBar();
         TypedValue heightValue = new TypedValue();
         browser.getTheme().resolveAttribute(
@@ -283,7 +284,7 @@ public class PhoneUi extends BaseUi {
         mUseQuickControls = useQuickControls;
         mTitleBar.setUseQuickControls(mUseQuickControls);
         if (useQuickControls) {
-            mPieControl = new PieControlPhone(mActivity, mUiController, this);
+            mPieControl = new PieControlPhone(mActivity, mUiController, this, mUseQuickControlsExt);
             mPieControl.attachToContainer(mContentView);
             WebView web = getWebView();
             if (web != null) {
@@ -303,6 +304,24 @@ public class PhoneUi extends BaseUi {
             }
             setTitleGravity(Gravity.NO_GRAVITY);
         }
+        updateUrlBarAutoShowManagerTarget();
+    }
+
+    @Override
+    public void setUseQuickControlsExt(boolean useQuickControlsExt) {
+        mUseQuickControlsExt = useQuickControlsExt;
+        if (mUseQuickControls) {
+            if (mPieControl != null) {
+                mPieControl.removeFromContainer(mContentView);
+            }
+            mPieControl = new PieControlPhone(mActivity, mUiController, this, mUseQuickControlsExt);
+            mPieControl.attachToContainer(mContentView);
+
+            WebView web = getWebView();
+            if (web != null) {
+                web.setEmbeddedTitleBar(null);
+            }
+        } 
         updateUrlBarAutoShowManagerTarget();
     }
 

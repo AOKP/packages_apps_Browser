@@ -148,6 +148,11 @@ public class PieMenu extends FrameLayout {
         mUseBackground = useBackground;
     }
 
+    public void setRadiusScaling(int scalePercent) {
+        mRadius = (mRadius * scalePercent) / 100;
+        mRadiusInc = (mRadiusInc * scalePercent) / 100;
+    }
+
     public void addItem(PieItem item) {
         // add the item to the pie itself
         mItems.add(item);
