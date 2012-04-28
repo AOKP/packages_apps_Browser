@@ -999,6 +999,8 @@
     <string name="accessibility_button_uaswitch">Switch user agent</string>
     <!-- Content description for go button [CHAR LIMIT=NONE] -->
     <string name="accessibility_button_go">Go</string>
+    <!-- Content description for home screen button [CHAR LIMIT=NONE] -->
+    <string name="accessibility_button_homescreen">Home screen</string>
 
     <!-- Content description for tab switcher button [CHAR LIMIT=NONE] -->
     <string name="accessibility_button_navscreen">Page manager</string>

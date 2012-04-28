@@ -107,6 +107,11 @@ public class NavTabView extends LinearLayout {
         return mHighlighted;
     }
 
+    protected Long getWebViewId(){
+        if(mTab == null) return null;
+        return new Long(mTab.getId());
+    }
+
     protected void setWebView(Tab tab) {
         mTab = tab;
         setTitle();
