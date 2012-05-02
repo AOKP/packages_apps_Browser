@@ -152,7 +152,7 @@ class TabControl {
     }
 
     boolean canCreateNewTab() {
-        return mMaxTabs > mTabs.size();
+        return mController.getMaxTabs() > mTabs.size();
     }
 
     /**
