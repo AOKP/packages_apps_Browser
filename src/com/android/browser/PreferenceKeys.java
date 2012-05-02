@@ -104,4 +104,10 @@ public interface PreferenceKeys {
     static final String PREF_DATA_PRELOAD = "preload_when";
     static final String PREF_LOAD_IMAGES = "load_images";
 
+    // ----------------------
+    // Keys for tabs_preferences.xml
+    // ----------------------
+    static final String PREF_MAX_TABS = "max_open_tabs";
+    static final String PREF_RESTORE_TABS = "restore_tabs_on_launch";
+
 }

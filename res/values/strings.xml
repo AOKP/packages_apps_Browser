@@ -989,4 +989,32 @@
     <!-- Content description for tab switcher transition [CHAR LIMIT=NONE] -->
     <string name="accessibility_transition_navscreen">Tab management</string>
 
+    <!-- Title for tab settings preference -->
+    <string name="tab_settings_title">Tab settings</string>
+    <!-- Dialog title -->
+    <string name="pref_max_open_tabs">Maximum open tabs</string>
+    <!-- Summary for Maximum open tabs -->
+    <string name="pref_max_open_tabs_summary">
+        Configure the maximum allowable open tabs for the browser</string>
+    <!-- Options in the Maximum open tabs dialog box -->
+    <string-array name="pref_max_open_tabs_choices">
+        <item>5</item>
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+    </string-array>
+    <!-- Do not translate -->
+    <string-array name="pref_max_open_tabs_values">
+        <item>5</item>
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+    </string-array>
+
+    <!-- Title for Restore tabs -->
+    <string name="pref_restore_tabs">Restore tabs</string>
+    <!-- Summary for Restore tabs -->
+    <string name="pref_restore_tabs_summary">Restore tabs on browser launch, either after killing the browser or after reboot</string>
 </resources>
