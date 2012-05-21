@@ -385,4 +385,9 @@
     <string name="accessibility_state_incognito" msgid="5786038488425202355">"隐身网页"</string>
     <string name="accessibility_state_frozen" msgid="8041539250447035570">"已保存的网页"</string>
     <string name="accessibility_transition_navscreen" msgid="2734915619351519547">"标签页管理"</string>
+    <string name="tab_settings_title">标签设置</string>
+    <string name="pref_max_open_tabs">标签页数量</string>
+    <string name="pref_max_open_tabs_summary">设置浏览器最多允许打开的标签页数量</string>
+    <string name="pref_restore_tabs">还原标签页</string>
+    <string name="pref_restore_tabs_summary">当浏览器崩溃或强行结束进程时，再次重启时还原上一次的标签页</string>
 </resources>
