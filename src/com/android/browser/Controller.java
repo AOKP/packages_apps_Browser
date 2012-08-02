@@ -28,6 +28,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
@@ -47,6 +48,7 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.provider.Browser;
 import android.provider.BrowserContract;
 import android.provider.BrowserContract.Images;
@@ -299,6 +301,11 @@ public class Controller
 
     private void onPreloginFinished(Bundle icicle, Intent intent, long currentTabId,
             boolean restoreIncognitoTabs) {
+
+        /*Context mContext = mActivity.getApplicationContext();
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        Boolean restoreTabs = mPrefs.getBoolean(PreferenceKeys.PREF_RESTORE_TABS, true);*/
+
         if (currentTabId == -1) {
             BackgroundHandler.execute(new PruneThumbnails(mActivity, null));
             if (intent == null) {
@@ -331,21 +338,24 @@ public class Controller
             }
             mUi.updateTabs(mTabControl.getTabs());
         } else {
-            mTabControl.restoreState(icicle, currentTabId, restoreIncognitoTabs,
-                    mUi.needsRestoreAllTabs());
-            List<Tab> tabs = mTabControl.getTabs();
-            ArrayList<Long> restoredTabs = new ArrayList<Long>(tabs.size());
-            for (Tab t : tabs) {
-                restoredTabs.add(t.getId());
-            }
-            BackgroundHandler.execute(new PruneThumbnails(mActivity, restoredTabs));
-            if (tabs.size() == 0) {
-                openTabToHomePage();
-            }
-            mUi.updateTabs(tabs);
-            // TabControl.restoreState() will create a new tab even if
-            // restoring the state fails.
-            setActiveTab(mTabControl.getCurrentTab());
+            // Disable this for now. Something is broken.
+            //if(restoreTabs == true) {
+                mTabControl.restoreState(icicle, currentTabId, restoreIncognitoTabs,
+                        mUi.needsRestoreAllTabs());
+                List<Tab> tabs = mTabControl.getTabs();
+                ArrayList<Long> restoredTabs = new ArrayList<Long>(tabs.size());
+                for (Tab t : tabs) {
+                    restoredTabs.add(t.getId());
+                }
+                BackgroundHandler.execute(new PruneThumbnails(mActivity, restoredTabs));
+                if (tabs.size() == 0) {
+                    openTabToHomePage();
+                }
+                mUi.updateTabs(tabs);
+                // TabControl.restoreState() will create a new tab even if
+                // restoring the state fails.
+                setActiveTab(mTabControl.getCurrentTab());
+            //}
             // Intent is non-null when framework thinks the browser should be
             // launching with a new intent (icicle is null).
             if (intent != null) {
@@ -444,7 +454,9 @@ public class Controller
     }
 
     int getMaxTabs() {
-        return mActivity.getResources().getInteger(R.integer.max_tabs);
+        Context mContext = mActivity.getApplicationContext();
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        return Integer.parseInt(mPrefs.getString(PreferenceKeys.PREF_MAX_TABS, "25"));
     }
 
     @Override
