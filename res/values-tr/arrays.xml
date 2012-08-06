@@ -35,7 +35,7 @@
         <item>Korece (EUC-KR)</item>
     </string-array>
     <string-array name="pref_data_preload_choices">
-        <item>Hiçbir zaman</item>
+        <item>Hiç bir zaman</item>
         <item>Yalnızca Kablosuzda</item>
         <item>Her zaman</item>
     </string-array>
