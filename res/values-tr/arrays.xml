@@ -44,4 +44,12 @@
         <item>Yalnızca Kablosuzda</item>
         <item>Her zaman</item>
     </string-array>
+    <string-array name="pref_content_ua_choices">
+        <item>Android</item>
+        <item>Masaüstü</item>
+        <item>Iphone</item>
+        <item>Ipad</item>
+        <item>Froyo N-1</item>
+        <item>Honeycomb-Xoom</item>
+    </string-array>
 </resources>

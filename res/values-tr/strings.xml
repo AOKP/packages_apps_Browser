@@ -78,6 +78,7 @@
     <string name="open_all_in_new_window">Tümünü yeni sekmelerde aç</string>
     <string name="goto_dot">Git</string>
     <string name="select_dot">Metin seç</string>
+    <string name="close_other_tabs">Diğer sekmeleri kapat</string>
     <string name="bookmarks">Favoriler</string>
     <string name="shortcut_bookmark">Favori</string>
     <string name="shortcut_bookmark_title">Bir yer işareti seçin</string>
@@ -93,6 +94,8 @@
     <string name="contextmenu_openlink">Aç</string>
     <string name="contextmenu_openlink_newwindow">Yeni sekmede aç</string>
     <string name="contextmenu_openlink_newwindow_background">Yeni arka plan sekmesinde aç</string>
+    <string name="contextmenu_openlink_incognito_newwindow">Yeni gizli sekmede aç</string>
+    <string name="contextmenu_openlink_incognito_newwindow_background">Yeni gizli sekmeyi arka planda aç</string>
     <string name="contextmenu_savelink">Bağlantıyı kaydet</string>
     <string name="contextmenu_sharelink">Bağlantıyı paylaş</string>
     <string name="contextmenu_copy">Kopyala</string>
@@ -121,6 +124,8 @@
     <string name="pref_content_homepage">Ana sayfayı ayarla</string>
     <string name="pref_content_search_engine">Arama motoru ayarlayın</string>
     <string name="pref_content_search_engine_summary">Arama motoru seçin</string>
+    <string name="pref_content_uastring">Sayfa Görünümü</string>
+    <string name="pref_content_uastring_summary">Sayfaları hangi biçimde görüntülemek istediğinizi seçin</string>
     <string name="pref_set_homepage_to">Şunu kullan:</string>
     <string name="pref_content_autofit">Sayfaları otomatik sığdır</string>
     <string name="pref_content_autofit_summary">Web sayfalarını ekrana sığacak şekilde biçimlendir</string>
@@ -213,11 +218,23 @@
     <string name="pref_extras_reset_default_summary">Varsayılan ayarları geri yükle</string>
     <string name="pref_extras_reset_default_dlg">Ayarlar, varsayılan değerlere geri döndürülsün mü?</string>
     <string name="pref_development_title">Hata Ayıklama</string>
+    <string name="pref_development_viewport">Geniş görünüm penceresi kullanın</string>
+    <string name="pref_development_single_column_rendering">Tek sütun oluşturma</string>
+    <string name="pref_development_normal_rendering">Normal oluşturma</string>
+    <string name="pref_development_trace">İzlemeyi etkinleştir</string>
+    <string name="pref_development_nav_dump">Yazılımsal önbellek dökümünü etkinleştir</string>
+    <string name="pref_development_hardware_accel">OpenGL oluşturma etkinleştir</string>
+    <string name="pref_development_hardware_accel_skia">Donanım hızlandırma etkinleştir</string>
+    <string name="pref_development_visual_indicator">Gösterge görseli etkin</string>
+    <string name="pref_development_cpu_upload_path">İşlemci yükleme yolunu etkinleştir</string>
+    <string name="js_engine_flags">JavaScript bayraklarını ayarla</string>
+    <string name="pref_development_error_console">JavaScript konsolu göster</string>
+    <string name="pref_development_reset_prelogin">Ön girişi sıfırla</string>
     <string name="pref_default_text_encoding">Metin kodlama</string>
     <string name="pref_default_text_encoding_dialogtitle">Metin kodlama</string>
     <string name="pref_accessibility_title">Erişilebilirlik</string>
     <string name="pref_font_size_category">Metin boyutu</string>
-    <string name="pref_lab_title">Labs</string>
+    <string name="pref_lab_title">Labaratuvar</string>
     <string name="pref_lab_quick_controls">Hızlı denetimler</string>
     <string name="pref_lab_quick_controls_summary">Hızlı denetimleri açmak, uygulama ve URL çubuklarını gizlemek için baş parmağınızı sol veya sağ kenara kaydırın.</string>
     <string name="pref_use_instant_search">Google Anında Arama</string>
@@ -243,6 +260,7 @@
     <string name="go_home">Ana Sayfa</string>
     <string name="add_new_bookmark">Yer işareti</string>
     <string name="add_bookmark_short">Ekle</string>
+    <string name="search_label">Tarayıcı</string>
     <string name="search_hint">"Arayın veya URL'yi yazın"</string>
     <string name="search_button_text">Git</string>
     <string name="search_settings_description">Favoriler ve web geçmişi</string>
@@ -259,6 +277,7 @@
     <string name="download_sdcard_busy_dlg_msg">USB depolama birimi meşgul. İndirme işlemlerine izin vermek için bildirim alanında USB Depolama Birimini Kapat seçeneğini dokunun.</string>
     <string name="cannot_download">"Yalnızca \"http\" veya \"https\" URL'leri indirilebilir."</string>
     <string name="download_pending">İndirme işlemi başlatılıyor…</string>
+    <string name="dump_nav">Navigasyon önbellek dökümü</string>
     <string name="search_the_web">"Web'de ara"</string>
     <string name="webstorage_outofspace_notification_title">Tarayıcı deposu dolu</string>
     <string name="webstorage_outofspace_notification_text">Yer boşaltmak için dokunun.</string>
@@ -285,6 +304,10 @@
     <string name="website_settings_clear_all_dialog_ok_button">Tamam</string>
     <string name="website_settings_clear_all_dialog_cancel_button">İptal</string>
     <string name="progress_dialog_setting_wallpaper">Duvar kağıdı ayarlanıyor...</string>
+    <string name="error_console_header_text_minimized">JavaScript konsolu göster</string>
+    <string name="error_console_header_text_maximized">JavaScript konsolu</string>
+    <string name="error_console_eval_text_hint">JavaScript değerlendir</string>
+    <string name="error_console_eval_button_text">Değerlendirme</string>
     <string name="defaultBookmarksUpButton">Yer işaretleri</string>
     <string name="empty_bookmarks_folder">Yer işareti yok.</string>
     <string name="other_bookmarks">Diğer Yer İşaretleri</string>
@@ -325,11 +348,17 @@
     <string name="accessibility_button_newtab">Yeni sekme aç</string>
     <string name="accessibility_button_newincognitotab">Yeni gizli sekme aç</string>
     <string name="accessibility_button_clear">Girdiyi temizle</string>
-    <string name="accessibility_button_uaswitch">"User agent'ı değiştir"</string>
+    <string name="accessibility_button_uaswitch">Kullanıcı arayüzünü değiştir</string>
     <string name="accessibility_button_go">Git</string>
+    <string name="accessibility_button_homescreen">Ana Ekran</string>
     <string name="accessibility_button_navscreen">Sayfa yöneticisi</string>
     <string name="accessibility_button_more">Diğer seçenekler</string>
     <string name="accessibility_state_incognito">Gizli sayfa</string>
     <string name="accessibility_state_frozen">Kayıtlı sayfa</string>
     <string name="accessibility_transition_navscreen">Sekme yönetimi</string>
+    <string name="tab_settings_title">Sekme Ayarları</string>
+    <string name="pref_max_open_tabs">En fazla açık sekme</string>
+    <string name="pref_max_open_tabs_summary">Tarayıcınız için açık olarak kullanabileceğiniz en fazla sekme sayısını yapılandırın</string>
+    <string name="pref_restore_tabs">Sekmeleri geri yükle</string>
+    <string name="pref_restore_tabs_summary">Tarayıcı kapatıldıktan sonra yada yeniden başlatılınca sekmeleri geri yükle</string>
 </resources>
