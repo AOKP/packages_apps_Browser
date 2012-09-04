@@ -2906,11 +2906,18 @@ public class Controller
 
     @Override
     public void startVoiceRecognizer() {
-        Intent voice = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        voice.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, 
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        voice.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
-        mActivity.startActivityForResult(voice, VOICE_RESULT);
+        try{
+            Intent voice = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            voice.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+            voice.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
+            mActivity.startActivityForResult(voice, VOICE_RESULT);
+        }
+        catch(android.content.ActivityNotFoundException ex)
+        {
+            //if could not find the Activity
+            Log.e(LOGTAG, "Could not start voice recognizer activity");
+        }
     }
 
     @Override
