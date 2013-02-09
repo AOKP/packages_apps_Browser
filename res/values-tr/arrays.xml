@@ -5,6 +5,14 @@
         <item>İsteğe bağlı</item>
         <item>Kapalı</item>
     </string-array>
+    <string-array name="pref_content_ua_choices">
+        <item>Android</item>
+        <item>MasaÜstü</item>
+        <item>iPhone</item>
+        <item>iPad</item>
+        <item>Froyo-N1</item>
+        <item>Honeycomb-Xoom</item>
+    </string-array>
     <string-array name="pref_homepage_choices">
         <item>Mevcut sayfa</item>
         <item>Boş sayfa</item>
@@ -43,13 +51,5 @@
         <item>Hiçbir zaman</item>
         <item>Yalnızca Kablosuzda</item>
         <item>Her zaman</item>
-    </string-array>
-    <string-array name="pref_content_ua_choices">
-        <item>Android</item>
-        <item>Masaüstü</item>
-        <item>Iphone</item>
-        <item>Ipad</item>
-        <item>Froyo N-1</item>
-        <item>Honeycomb-Xoom</item>
     </string-array>
 </resources>
