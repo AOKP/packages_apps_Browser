@@ -110,6 +110,12 @@
     <string name="contextmenu_openlink" msgid="7237961252214188935">"開く"</string>
     <string name="contextmenu_openlink_newwindow" msgid="1205313604181761403">"新しいタブで開く"</string>
     <string name="contextmenu_openlink_newwindow_background" msgid="4690381019116746687">"新しいバックグラウンドタブで開く"</string>
+    <!-- Context Menu item to open the currently selected link in a new
+            incognito window. -->
+    <string name="contextmenu_openlink_incognito_newwindow">新しい匿名タブで開く</string>
+    <!-- Context Menu item to open the currently selected link in a new
+         background window. [CHAR LIMIT=50] -->
+    <string name="contextmenu_openlink_incognito_newwindow_background">新しいバックグラウンド匿名タブで開く</string>
     <string name="contextmenu_savelink" msgid="5508554930832538184">"リンクを保存"</string>
     <string name="contextmenu_sharelink" msgid="5392275392280130331">"リンクを共有"</string>
     <string name="contextmenu_copy" msgid="398860586635404030">"コピー"</string>
@@ -143,6 +149,8 @@
     <string name="pref_content_homepage" msgid="3324574611613105696">"ホームページを設定"</string>
     <string name="pref_content_search_engine" msgid="1620101310821644144">"検索エンジンの設定"</string>
     <string name="pref_content_search_engine_summary" msgid="304003941861818133">"検索エンジンを選択してください"</string>
+    <string name="pref_content_uastring">User Agent</string>
+    <string name="pref_content_uastring_summary">User Agentを選択する</string>
     <string name="pref_set_homepage_to" msgid="7838684355145561242">"設定先:"</string>
   <string-array name="pref_homepage_choices">
     <item msgid="844041670142910837">"現在のページ"</item>
@@ -398,4 +406,34 @@
     <string name="accessibility_state_frozen" msgid="8041539250447035570">"保存したページ"</string>
     <string name="accessibility_transition_navscreen" msgid="2734915619351519547">"タブの管理"</string>
     <string name="accessibility_button_bookmarks_folder_up" msgid="9179389954714270505">"前のフォルダ"</string>
+
+    <!-- Title for tab settings preference -->
+    <string name="tab_settings_title">タブ設定</string>
+    <!-- Dialog title -->
+    <string name="pref_max_open_tabs">最大タブ数</string>
+    <!-- Summary for Maximum open tabs -->
+    <string name="pref_max_open_tabs_summary">
+        ブラウザで開けるタブの最大数を設定する</string>
+    <!-- Options in the Maximum open tabs dialog box -->
+    <string-array name="pref_max_open_tabs_choices">
+        <item>5</item>
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+    </string-array>
+    <!-- Do not translate -->
+    <string-array name="pref_max_open_tabs_values">
+        <item>5</item>
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+    </string-array>
+
+    <!-- Title for Restore tabs -->
+    <string name="pref_restore_tabs">タブのリストア</string>
+    <!-- Summary for Restore tabs -->
+    <string name="pref_restore_tabs_summary">ブラウザ起動時に前回開いていたタブをリストアする</string>
+
 </resources>
