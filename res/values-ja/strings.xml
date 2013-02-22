@@ -109,13 +109,13 @@
     <string name="contextheader_folder_empty" msgid="974171637803391651">"空のフォルダ"</string>
     <string name="contextmenu_openlink" msgid="7237961252214188935">"開く"</string>
     <string name="contextmenu_openlink_newwindow" msgid="1205313604181761403">"新しいタブで開く"</string>
-    <string name="contextmenu_openlink_newwindow_background" msgid="4690381019116746687">"新しいバックグラウンドタブで開く"</string>
+    <string name="contextmenu_openlink_newwindow_background" msgid="4690381019116746687">"新しいタブで開く（バックグラウンド）"</string>
     <!-- Context Menu item to open the currently selected link in a new
             incognito window. -->
-    <string name="contextmenu_openlink_incognito_newwindow">新しい匿名タブで開く</string>
+    <string name="contextmenu_openlink_incognito_newwindow">新しいシークレットタブで開く</string>
     <!-- Context Menu item to open the currently selected link in a new
          background window. [CHAR LIMIT=50] -->
-    <string name="contextmenu_openlink_incognito_newwindow_background">新しいバックグラウンド匿名タブで開く</string>
+    <string name="contextmenu_openlink_incognito_newwindow_background">新しいシークレットタブで開く（バックグラウンド）</string>
     <string name="contextmenu_savelink" msgid="5508554930832538184">"リンクを保存"</string>
     <string name="contextmenu_sharelink" msgid="5392275392280130331">"リンクを共有"</string>
     <string name="contextmenu_copy" msgid="398860586635404030">"コピー"</string>
