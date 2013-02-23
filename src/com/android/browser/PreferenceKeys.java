@@ -84,6 +84,7 @@ public interface PreferenceKeys {
     static final String PREF_ENABLE_QUICK_CONTROLS = "enable_quick_controls";
     static final String PREF_FULLSCREEN = "fullscreen";
     static final String PREF_ENABLE_WEBGL = "enable_webgl";
+    static final String PREF_ENABLE_WEBSOCKETS = "enable_websockets";
 
     // ----------------------
     // Keys for privacy_security_preferences.xml

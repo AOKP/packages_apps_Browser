@@ -279,6 +279,7 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
         settings.setAutoFillProfile(getAutoFillProfile());
         setIsWebGLAvailable(settings.isWebGLAvailable());
         settings.setWebGLEnabled(isWebGLAvailable() && isWebGLEnabled());
+        settings.setWebSocketsEnabled(isWebSocketsEnabled());
 
         String ua = mCustomUserAgents.get(settings);
         if (ua != null) {
@@ -848,6 +849,11 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
     public boolean isWebGLEnabled() {
         return mPrefs.getBoolean(PREF_ENABLE_WEBGL, true);
     }
+
+    public boolean isWebSocketsEnabled() {
+        return mPrefs.getBoolean(PREF_ENABLE_WEBSOCKETS, false);
+    }
+
 
     // -----------------------------
     // getter/setters for privacy_security_preferences.xml
