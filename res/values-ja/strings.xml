@@ -283,6 +283,10 @@
     <string name="pref_use_instant_search_summary" msgid="839320474961917522">"Google検索時にGoogleインスタント検索を使用すると、入力中に結果が表示されます（データの使用量が増えることがあります）。"</string>
     <string name="pref_lab_fullscreen" msgid="8173609016657987973">"全画面"</string>
     <string name="pref_lab_fullscreen_summary" msgid="7694738112219376740">"全画面モードを使用してステータスバーを非表示にする"</string>
+    <!-- Title for the WebGL feature [CHAR LIMIT=40] -->
+    <string name="pref_lab_webgl">WebGL</string>
+    <!-- Summary for the WebGL lab feature [CHAR LIMIT=120] -->
+    <string name="pref_lab_webgl_summary">WebGLを有効にする</string>
     <string name="pref_data_title" msgid="7255058703417796578">"帯域幅の管理"</string>
     <string name="pref_data_preload_title" msgid="4479320472980292873">"検索結果のプリロード"</string>
   <string-array name="pref_data_preload_choices">
