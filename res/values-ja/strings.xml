@@ -287,6 +287,10 @@
     <string name="pref_lab_webgl">WebGL</string>
     <!-- Summary for the WebGL lab feature [CHAR LIMIT=120] -->
     <string name="pref_lab_webgl_summary">WebGLを有効にする</string>
+    <!-- Title for the WebSockets feature [CHAR LIMIT=40] -->
+    <string name="pref_lab_websockets">WebSockets</string>
+    <!-- Summary for the WebGL lab feature [CHAR LIMIT=120] -->
+    <string name="pref_lab_websockets_summary">WebSocketsを有効にする</string>
     <string name="pref_data_title" msgid="7255058703417796578">"帯域幅の管理"</string>
     <string name="pref_data_preload_title" msgid="4479320472980292873">"検索結果のプリロード"</string>
   <string-array name="pref_data_preload_choices">
