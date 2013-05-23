@@ -398,4 +398,17 @@
     <string name="accessibility_state_frozen" msgid="8041539250447035570">"Сохраненная страница"</string>
     <string name="accessibility_transition_navscreen" msgid="2734915619351519547">"Управление вкладками"</string>
     <string name="accessibility_button_bookmarks_folder_up" msgid="9179389954714270505">"Предыдущая папка"</string>
+    <string name="contextmenu_openlink_incognito_newwindow">Открыть в новой вкладке инкогнито</string>
+    <string name="contextmenu_openlink_incognito_newwindow_background">Открыть в новой фоновой вкладке инкогнито</string>
+    <string name="pref_content_uastring">Клиентское приложение</string>
+    <string name="pref_content_uastring_summary">Выберите клиентское приложение для запроса страницы</string>
+    <string name="pref_lab_webgl">WebGL</string>
+    <string name="pref_lab_webgl_summary">Включить WebGL</string>
+    <string name="pref_lab_websockets">WebSockets</string>
+    <string name="pref_lab_websockets_summary">Включить WebSockets</string>
+    <string name="tab_settings_title">Настройки вкладки</string>
+    <string name="pref_max_open_tabs">Максимум открытых вкладок</string>
+    <string name="pref_max_open_tabs_summary"> Настроить максимально допустимое количество открытых вкладок браузера</string>
+    <string name="pref_restore_tabs">Восстановить вкладки</string>
+    <string name="pref_restore_tabs_summary">Восстановить вкладки при запуске браузера, а также после завершения работы браузера или перезагрузки</string>
 </resources>
