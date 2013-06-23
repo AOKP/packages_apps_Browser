@@ -32,10 +32,12 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.MatrixCursor;
+import android.database.MemoryCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+import android.os.Binder;
 import android.provider.BaseColumns;
 import android.provider.Browser;
 import android.provider.Browser.BookmarkColumns;
@@ -52,6 +54,7 @@ import android.provider.BrowserContract.SyncState;
 import android.provider.ContactsContract.RawContacts;
 import android.provider.SyncStateContract;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.browser.R;
 import com.android.browser.UrlUtils;
@@ -67,6 +70,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class BrowserProvider2 extends SQLiteContentProvider {
+
+    private static final String TAG = "BrowserProvider2";
 
     public static final String PARAM_GROUP_BY = "groupBy";
     public static final String PARAM_ALLOW_EMPTY_ACCOUNTS = "allowEmptyAccounts";
@@ -876,6 +881,20 @@ public class BrowserProvider2 extends SQLiteContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
             String sortOrder) {
+        Cursor c = queryInternal(uri, projection, selection, selectionArgs, sortOrder);
+
+        if (getContext().isPrivacyGuardEnabled()) {
+            Log.d(TAG, "Browser query from application using privacy guard! pid=" + Binder.getCallingPid());
+            MemoryCursor mc = new MemoryCursor(null, c.getColumnNames());
+            c.close();
+            return mc;
+        }
+
+        return c;
+    }
+
+    private Cursor queryInternal(Uri uri, String[] projection, String selection, String[] selectionArgs,
+            String sortOrder) {
         SQLiteDatabase db = mOpenHelper.getReadableDatabase();
         final int match = URI_MATCHER.match(uri);
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
@@ -1222,6 +1241,9 @@ public class BrowserProvider2 extends SQLiteContentProvider {
     @Override
     public int deleteInTransaction(Uri uri, String selection, String[] selectionArgs,
             boolean callerIsSyncAdapter) {
+        if (getContext().isPrivacyGuardEnabled()) {
+            return 0;
+        }
         final int match = URI_MATCHER.match(uri);
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         int deleted = 0;
@@ -1365,6 +1387,9 @@ public class BrowserProvider2 extends SQLiteContentProvider {
 
     @Override
     public Uri insertInTransaction(Uri uri, ContentValues values, boolean callerIsSyncAdapter) {
+        if (getContext().isPrivacyGuardEnabled()) {
+            return null;
+        }
         int match = URI_MATCHER.match(uri);
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         long id = -1;
@@ -1615,6 +1640,9 @@ public class BrowserProvider2 extends SQLiteContentProvider {
     @Override
     public int updateInTransaction(Uri uri, ContentValues values, String selection,
             String[] selectionArgs, boolean callerIsSyncAdapter) {
+        if (getContext().isPrivacyGuardEnabled()) {
+            return 0;
+        }
         int match = URI_MATCHER.match(uri);
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         if (match == LEGACY || match == LEGACY_ID) {
