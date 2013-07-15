@@ -398,4 +398,16 @@
     <string name="accessibility_state_frozen" msgid="8041539250447035570">"Pàgina desada"</string>
     <string name="accessibility_transition_navscreen" msgid="2734915619351519547">"Gestió de pestanyes"</string>
     <string name="accessibility_button_bookmarks_folder_up" msgid="9179389954714270505">"Carpeta anterior"</string>
+    <string name="contextmenu_openlink_incognito_newwindow">Obre en una nova pestanya d\'incògnit</string>
+    <string name="contextmenu_openlink_incognito_newwindow_background">Obre en una pestanya nova de fons d\'incògnit</string>
+    <string name="pref_content_uastring">Agent d\'usuari</string>
+    <string name="pref_content_uastring_summary">Trieu l\'agent d\'usuari per a la sol·licitud de la pàgina</string>
+    <string name="pref_lab_webgl">WebGL</string>
+    <string name="pref_lab_webgl_summary">Habilita el WebGL</string>
+    <string name="pref_lab_websockets">WebSockets</string>
+    <string name="pref_lab_websockets_summary">Habilita els WebSockets</string>
+    <string name="tab_settings_title">Configuració de pestanyes</string>
+    <string name="pref_max_open_tabs">Nombre màxim de pestanyes</string>
+    <string name="pref_restore_tabs">Restaura les pestanyes</string>
+    <string name="pref_restore_tabs_summary">Restaura les pestanyes en iniciar el navegador, tant després de matar el navegador com de tornar a arrencar</string>
 </resources>
