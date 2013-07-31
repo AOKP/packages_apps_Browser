@@ -157,13 +157,14 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
     }
 
     public void startManagingSettings(WebSettings settings) {
-        WebSettingsClassic settingsClassic = (WebSettingsClassic) settings;
+
         if (mNeedsSharedSync) {
             syncSharedSettings();
         }
+
         synchronized (mManagedSettings) {
-            syncStaticSettings(settingsClassic);
-            syncSetting(settingsClassic);
+            syncStaticSettings(settings);
+            syncSetting(settings);
             mManagedSettings.add(new WeakReference<WebSettings>(settings));
         }
     }
@@ -253,22 +254,17 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
     /**
      * Syncs all the settings that have a Preference UI
      */
-    private void syncSetting(WebSettingsClassic settings) {
+    private void syncSetting(WebSettings settings) {
         settings.setGeolocationEnabled(enableGeolocation());
         settings.setJavaScriptEnabled(enableJavascript());
         settings.setLightTouchEnabled(enableLightTouch());
         settings.setNavDump(enableNavDump());
-        settings.setHardwareAccelSkiaEnabled(isSkiaHardwareAccelerated());
-        settings.setShowVisualIndicator(enableVisualIndicator());
         settings.setDefaultTextEncodingName(getDefaultTextEncoding());
         settings.setDefaultZoom(getDefaultZoom());
         settings.setMinimumFontSize(getMinimumFontSize());
         settings.setMinimumLogicalFontSize(getMinimumFontSize());
-        settings.setForceUserScalable(forceEnableUserScalable());
         settings.setPluginState(getPluginState());
         settings.setTextZoom(getTextZoom());
-        settings.setDoubleTapZoom(getDoubleTapZoom());
-        settings.setAutoFillEnabled(isAutofillEnabled());
         settings.setLayoutAlgorithm(getLayoutAlgorithm());
         settings.setJavaScriptCanOpenWindowsAutomatically(!blockPopupWindows());
         settings.setLoadsImagesAutomatically(loadImages());
@@ -276,7 +272,6 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
         settings.setSavePassword(rememberPasswords());
         settings.setSaveFormData(saveFormdata());
         settings.setUseWideViewPort(isWideViewport());
-        settings.setAutoFillProfile(getAutoFillProfile());
         setIsWebGLAvailable(settings.isWebGLAvailable());
         settings.setWebGLEnabled(isWebGLAvailable() && isWebGLEnabled());
         settings.setWebSocketsEnabled(isWebSocketsEnabled());
@@ -288,30 +283,39 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
             settings.setUserAgentString(USER_AGENTS[getUserAgent()]);
         }
 
+        if (!(settings instanceof WebSettingsClassic)) return;
+
+        WebSettingsClassic settingsClassic = (WebSettingsClassic) settings;
+        settingsClassic.setHardwareAccelSkiaEnabled(isSkiaHardwareAccelerated());
+        settingsClassic.setShowVisualIndicator(enableVisualIndicator());
+        settingsClassic.setForceUserScalable(forceEnableUserScalable());
+        settingsClassic.setDoubleTapZoom(getDoubleTapZoom());
+        settingsClassic.setAutoFillEnabled(isAutofillEnabled());
+        settingsClassic.setAutoFillProfile(getAutoFillProfile());
+
         boolean useInverted = useInvertedRendering();
-        settings.setProperty(WebViewProperties.gfxInvertedScreen,
+        settingsClassic.setProperty(WebViewProperties.gfxInvertedScreen,
                 useInverted ? "true" : "false");
         if (useInverted) {
-            settings.setProperty(WebViewProperties.gfxInvertedScreenContrast,
+          settingsClassic.setProperty(WebViewProperties.gfxInvertedScreenContrast,
                     Float.toString(getInvertedContrast()));
         }
 
         if (isDebugEnabled()) {
-            settings.setProperty(WebViewProperties.gfxEnableCpuUploadPath,
+          settingsClassic.setProperty(WebViewProperties.gfxEnableCpuUploadPath,
                     enableCpuUploadPath() ? "true" : "false");
         }
 
-        settings.setLinkPrefetchEnabled(mLinkPrefetchAllowed);
+        settingsClassic.setLinkPrefetchEnabled(mLinkPrefetchAllowed);
     }
 
     /**
      * Syncs all the settings that have no UI
      * These cannot change, so we only need to set them once per WebSettings
      */
-    private void syncStaticSettings(WebSettingsClassic settings) {
+    private void syncStaticSettings(WebSettings settings) {
         settings.setDefaultFontSize(16);
         settings.setDefaultFixedFontSize(13);
-        settings.setPageCacheCapacity(getPageCacheCapacity());
 
         // WebView inside Browser doesn't want initial focus to be set.
         settings.setNeedInitialFocus(false);
@@ -320,13 +324,6 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
         // enable smooth transition for better performance during panning or
         // zooming
         settings.setEnableSmoothTransition(true);
-        // WebView should be preserving the memory as much as possible.
-        // However, apps like browser wish to turn on the performance mode which
-        // would require more memory.
-        // TODO: We need to dynamically allocate/deallocate temporary memory for
-        // apps which are trying to use minimal memory. Currently, double
-        // buffering is always turned on, which is unnecessary.
-        settings.setProperty(WebViewProperties.gfxUseMinimalMemory, "false");
         // disable content url access
         settings.setAllowContentAccess(false);
 
@@ -334,7 +331,6 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
         settings.setAppCacheEnabled(true);
         settings.setDatabaseEnabled(true);
         settings.setDomStorageEnabled(true);
-        settings.setWorkersEnabled(true);  // This only affects V8.
 
         // HTML5 configuration parametersettings.
         settings.setAppCacheMaxSize(getWebStorageSizeManager().getAppCacheMaxSize());
@@ -344,6 +340,19 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
         // origin policy for file access
         settings.setAllowUniversalAccessFromFileURLs(false);
         settings.setAllowFileAccessFromFileURLs(false);
+
+        if (!(settings instanceof WebSettingsClassic)) return;
+
+        WebSettingsClassic settingsClassic = (WebSettingsClassic) settings;
+        settingsClassic.setPageCacheCapacity(getPageCacheCapacity());
+        // WebView should be preserving the memory as much as possible.
+        // However, apps like browser wish to turn on the performance mode which
+        // would require more memory.
+        // TODO: We need to dynamically allocate/deallocate temporary memory for
+        // apps which are trying to use minimal memory. Currently, double
+        // buffering is always turned on, which is unnecessary.
+        settingsClassic.setProperty(WebViewProperties.gfxUseMinimalMemory, "false");
+        settingsClassic.setWorkersEnabled(true);  // This only affects V8.
     }
 
     private void syncSharedSettings() {
@@ -360,7 +369,7 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
             Iterator<WeakReference<WebSettings>> iter = mManagedSettings.iterator();
             while (iter.hasNext()) {
                 WeakReference<WebSettings> ref = iter.next();
-                WebSettingsClassic settings = (WebSettingsClassic)ref.get();
+                WebSettings settings = ref.get();
                 if (settings == null) {
                     iter.remove();
                     continue;

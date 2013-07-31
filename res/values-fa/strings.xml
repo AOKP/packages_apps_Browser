@@ -31,6 +31,7 @@
     <string name="username" msgid="5057566336518215922">"نام"</string>
     <string name="password" msgid="1177138552305184404">"رمز ورود"</string>
     <string name="action" msgid="183105774472071343">"ورود به سیستم"</string>
+    <string name="bookmarks_add_page" msgid="3093456701072617702">"ذخیره نشانک‌"</string>
     <string name="bookmarks_search" msgid="5229596268214362873">"مرورگر"</string>
     <string name="cancel" msgid="3017274947407233702">"لغو"</string>
     <string name="ok" msgid="1509280796718850364">"تأیید"</string>
@@ -306,7 +307,7 @@
     <string name="add_bookmark_short" msgid="3783984330998103735">"افزودن"</string>
     <string name="search_hint" msgid="4647356319916631820">"جستجو یا تایپ URL"</string>
     <string name="search_button_text" msgid="5235226933877634410">"برو"</string>
-    <string name="search_settings_description" msgid="1422401062529014107">"نشاک ها و سابقه وب"</string>
+    <string name="search_settings_description" msgid="1422401062529014107">"نشانک‌ها و سابقه وب"</string>
     <string name="popup_window_attempt" msgid="31565781154067629">"به این سایت اجازه می‌دهید یک پنجره بازشو باز کند؟"</string>
     <string name="allow" msgid="1157313689171991335">"اجازه داده شود"</string>
     <string name="block" msgid="9172175889884707800">"مسدود کردن"</string>

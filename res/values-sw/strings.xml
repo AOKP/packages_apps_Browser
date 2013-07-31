@@ -19,7 +19,7 @@
     <string name="application_name" msgid="1935869255545976415">" Kivinjari"</string>
     <string name="choose_upload" msgid="3649366287575002063">"Chagua faili ya kupakia"</string>
     <string name="uploads_disabled" msgid="463761197575372994">"Upakiaji wa faili umelemazwa."</string>
-    <string name="new_tab" msgid="7971857320679510529">"Tabo mpya"</string>
+    <string name="new_tab" msgid="7971857320679510529">"Kichupo kipya"</string>
     <string name="new_incognito_tab" msgid="3606197964239039478">"Kichupo fiche kipya"</string>
     <string name="tab_bookmarks" msgid="2305793036003473653">"Alamisho"</string>
     <string name="tab_most_visited" msgid="1077402532455000703">"Zilizotembelewa sana"</string>
@@ -31,6 +31,7 @@
     <string name="username" msgid="5057566336518215922">"Jina"</string>
     <string name="password" msgid="1177138552305184404">"Nenosiri"</string>
     <string name="action" msgid="183105774472071343">"Ingia"</string>
+    <string name="bookmarks_add_page" msgid="3093456701072617702">"Hifadhi alamisho"</string>
     <string name="bookmarks_search" msgid="5229596268214362873">" Kivinjari"</string>
     <string name="cancel" msgid="3017274947407233702">"Ghairi"</string>
     <string name="ok" msgid="1509280796718850364">"Sawa"</string>
@@ -78,10 +79,10 @@
     <string name="remove_bookmark" msgid="8407495852801410891">"Futa  alamisho"</string>
     <string name="remove_from_bookmarks" msgid="4374080666576982775">"Ondoa kutoka kwa alamisho"</string>
     <string name="remove_history_item" msgid="5021424935726728618">"Ondoa kwenye historia"</string>
-    <string name="set_as_homepage" msgid="4752937379414905560">"Weka uwe ukurasa wa mwanzo"</string>
+    <string name="set_as_homepage" msgid="4752937379414905560">"Weka uwe ukurasa wa kwanza"</string>
     <string name="bookmark_saved" msgid="2766434679871317557">"Imehifadhiwa kwa alamisho"</string>
     <string name="bookmark_not_saved" msgid="1077732557310662080">"Haikuweza kuhifadhi alamamisho."</string>
-    <string name="homepage_set" msgid="8768087280310966395">"Ukurasa wa mwanzo umewekwa."</string>
+    <string name="homepage_set" msgid="8768087280310966395">"Ukurasa wa kwanza umewekwa."</string>
     <string name="bookmark_needs_title" msgid="6245900436119218187">"Alamisho lazima iwe na jina."</string>
     <string name="bookmark_needs_url" msgid="7809876865972755158">"Alamisho lazima iwe na mahali."</string>
     <string name="bookmark_url_not_valid" msgid="4917440933384496211">"URL hii si halali."</string>
@@ -99,7 +100,7 @@
     <string name="shortcut_bookmark" msgid="3974876480401135895">"Alamisho"</string>
     <string name="shortcut_bookmark_title" msgid="7570786275916681296">"Chagua alamisho"</string>
     <string name="history" msgid="2451240511251410032">"Historia"</string>
-    <string name="menu_view_download" msgid="2124570321712995120">"Vipakuzi"</string>
+    <string name="menu_view_download" msgid="2124570321712995120">"Vipakuliwa"</string>
     <string name="copy_page_url" msgid="1188679152608889555">"Nakili URL ya ukurasa"</string>
     <string name="share_page" msgid="593756995297268343">"Shiriki ukurasa"</string>
     <string name="menu_save_snapshot" msgid="6935080344031126139">"Hifadhi kwa usomaji wa nje ya mtandao"</string>
@@ -139,8 +140,8 @@
     <item msgid="2484126708670016519">"Inapohitajika"</item>
     <item msgid="8547442717307793863">"Zima"</item>
   </string-array>
-    <string name="pref_content_open_in_background_summary" msgid="955411158407739504">"Fungua tabo vipya nyuma ya tabo ya sasa"</string>
-    <string name="pref_content_homepage" msgid="3324574611613105696">"Weka ukurasa wa mwanzo"</string>
+    <string name="pref_content_open_in_background_summary" msgid="955411158407739504">"Fungua vichupo vipya nyuma ya hiki cha sasa"</string>
+    <string name="pref_content_homepage" msgid="3324574611613105696">"Weka ukurasa wa kwanza"</string>
     <string name="pref_content_search_engine" msgid="1620101310821644144">"Weka injini tafuti"</string>
     <string name="pref_content_search_engine_summary" msgid="304003941861818133">"Chagua injini tafuti"</string>
     <string name="pref_set_homepage_to" msgid="7838684355145561242">"Weka kwa"</string>
@@ -301,17 +302,17 @@
     <string name="clear_history" msgid="5998307092715979619">"Futa historia"</string>
     <string name="browser_history" msgid="2979476257919939232">"Kurasa zilizotembelewa hivi karibuni"</string>
     <string name="empty_history" msgid="7013369425484218985">"Hakuna historia ya kivinjari."</string>
-    <string name="go_home" msgid="109129207276086793">"Ukurasa wa mwanzo"</string>
+    <string name="go_home" msgid="109129207276086793">"Ukurasa wa kwanza"</string>
     <string name="add_new_bookmark" msgid="3158497555612337238">"Ongeza alamisho"</string>
     <string name="add_bookmark_short" msgid="3783984330998103735">"Ongeza"</string>
     <string name="search_hint" msgid="4647356319916631820">"Tafuta au chapisha URL"</string>
     <string name="search_button_text" msgid="5235226933877634410">"Nenda"</string>
-    <string name="search_settings_description" msgid="1422401062529014107">"Historia ya vialamisho na wavuti"</string>
+    <string name="search_settings_description" msgid="1422401062529014107">"Historia ya alamisho na wavuti"</string>
     <string name="popup_window_attempt" msgid="31565781154067629">"Ruhusu tovuti hii kufungua dirisha la kidukizo?"</string>
     <string name="allow" msgid="1157313689171991335">"Ruhusu"</string>
     <string name="block" msgid="9172175889884707800">"Zuia"</string>
     <string name="too_many_windows_dialog_title" msgid="5709782301477380438">"Kikomo cha kichupo kimefikiwa"</string>
-    <string name="too_many_windows_dialog_message" msgid="3644234634638290304">"Imeshindwa kufungua tabo mpya hadi ufunge moja."</string>
+    <string name="too_many_windows_dialog_message" msgid="3644234634638290304">"Imeshindwa kufungua kichupo kipya hadi ufunge mojawapo ya vile ulivyofungua."</string>
     <string name="too_many_subwindows_dialog_title" msgid="3805453941587725944">"Dirisha ibukizi tayari limefunguliwa"</string>
     <string name="too_many_subwindows_dialog_message" msgid="2164725447981195556">"Kidukizo moja tu inaweza kufunguliwa kwa wakati."</string>
     <string name="download_no_sdcard_dlg_title" product="nosdcard" msgid="56777245081568508">"Hifadhi ya USB haipatikani"</string>
@@ -320,8 +321,8 @@
     <string name="download_no_sdcard_dlg_msg" product="default" msgid="2616399456116301518">"Kadi ya SD inahitajika ili kupakua <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="download_sdcard_busy_dlg_title" product="nosdcard" msgid="8081445664689818973">"Hifadhi ya USB haipatikani"</string>
     <string name="download_sdcard_busy_dlg_title" product="default" msgid="6877712666046917741">"Kadi ya SD haipatikani"</string>
-    <string name="download_sdcard_busy_dlg_msg" product="nosdcard" msgid="8412543086906716875">"Hifadhi ya USB ina shughuli. Ili kuruhusu vipakuzi, gusa \"Zima hifadhi ya USB\" katika arifa."</string>
-    <string name="download_sdcard_busy_dlg_msg" product="default" msgid="2629425950473358591">"Kadi ya SD inashughuli. Kuruhusu vipakuzi, gusa \"Zima Hifadhi ya USB\" katika arifa."</string>
+    <string name="download_sdcard_busy_dlg_msg" product="nosdcard" msgid="8412543086906716875">"Hifadhi ya USB inatumika. Ili kuruhusu vipakuliwa, gusa \"Zima hifadhi ya USB\" katika arifa."</string>
+    <string name="download_sdcard_busy_dlg_msg" product="default" msgid="2629425950473358591">"Kadi ya SD inatumika. Kuruhusu vipakuliwa, gusa \"Zima Hifadhi ya USB\" katika arifa."</string>
     <string name="cannot_download" msgid="8150552478556798780">"Inaweza kupakua tu URLs za \"http\" au \"https\"."</string>
     <string name="download_pending" msgid="2599683668575349559">"Inaanza kupakua..."</string>
     <string name="search_the_web" msgid="6046130189241962337">"Tafuta wavuti"</string>
@@ -342,7 +343,7 @@
     <string name="geolocation_settings_page_title" msgid="1745477985097536528">"Futa ufikiaji mahali"</string>
     <string name="geolocation_settings_page_summary_allowed" msgid="9180251524290811398">"Tovuti hii kwa sasa inaweza kufikia mahali ulipo"</string>
     <string name="geolocation_settings_page_summary_not_allowed" msgid="7941769772784366199">"Tovuti hii kwa sasa haiwezi kufikia mahali ulipo"</string>
-    <string name="geolocation_settings_page_dialog_message" msgid="8772923416296868537">"Futa ufikivu wa eneo ya wavuti hii?"</string>
+    <string name="geolocation_settings_page_dialog_message" msgid="8772923416296868537">"Idhini ya kufikia eneo kwa wavuti hii ifutwe?"</string>
     <string name="geolocation_settings_page_dialog_ok_button" msgid="2113465477131017852">"Sawa"</string>
     <string name="geolocation_settings_page_dialog_cancel_button" msgid="7941036504673409747">"Ghairi"</string>
     <string name="website_settings_clear_all" msgid="8739804325997655980">"Futa zote"</string>
@@ -357,10 +358,10 @@
     <string name="account_chooser_dialog_title" msgid="3314204833188808194">"Chagua akaunti"</string>
     <string name="import_bookmarks_dialog_title" msgid="3325557652271172128">"Sawazisha kwa akaunti ya Google"</string>
     <string name="import_bookmarks_dialog_description" msgid="2362897194870789609">"Alamisho kwenye kifaa hiki bado haihusishwi na akaunti ya Google. Hifadhi alamisho hizi kwa kuziongeza kwa akaunti. Futa alamisho hizi ikiwa hautaki kuzilandanisha."</string>
-    <string name="import_bookmarks_dialog_select_add_account" msgid="7643058662272484895">"Ongeza alamisho iliyo kwenye kifaa hiki sasa na uanze kulandanisha na akaunti ya Google"</string>
-    <string name="import_bookmarks_dialog_delete_select_account" msgid="4333848003180415516">"Futa alamisho ilioko sasa kwa kifaa na anza kulandanisha na akaunti za Google"</string>
-    <string name="import_bookmarks_dialog_confirm_delete" msgid="2204771572755630570">"Futa alamisho zilizo katika kifaa hiki na anza kulandanisha na <xliff:g id="GOOGLE_ACCOUNT">%s</xliff:g>"</string>
-    <string name="import_bookmarks_dialog_confirm_add" msgid="8942794112340838111">"Ongeza alamisho zilizo kwenye kifaa hiki na anza kulandanisha  na <xliff:g id="GOOGLE_ACCOUNT">%s</xliff:g>?."</string>
+    <string name="import_bookmarks_dialog_select_add_account" msgid="7643058662272484895">"Ongeza alamisho zilizo kwenye kifaa hiki na uanze kusawazisha na akaunti ya Google"</string>
+    <string name="import_bookmarks_dialog_delete_select_account" msgid="4333848003180415516">"Futa alamisho zilizo kwenye kifaa hiki na uanze kusawazisha na akaunti za Google"</string>
+    <string name="import_bookmarks_dialog_confirm_delete" msgid="2204771572755630570">"Je, alamisho zilizo katika kifaa hiki zifutwe na alamisho zianze kusawazishwa na <xliff:g id="GOOGLE_ACCOUNT">%s</xliff:g>?"</string>
+    <string name="import_bookmarks_dialog_confirm_add" msgid="8942794112340838111">"Alamisho zilizo kwenye kifaa hiki ziongezwe na zianze kusawazishwa na <xliff:g id="GOOGLE_ACCOUNT">%s</xliff:g>?"</string>
     <string name="import_bookmarks_dialog_remove" msgid="5984607822851800902">"Futa alamisho"</string>
     <string name="import_bookmarks_wizard_next" msgid="7578143961884352676">"Ifuatayo"</string>
     <string name="import_bookmarks_wizard_previous" msgid="8551440353688257031">"Iliyotangulia"</string>
