@@ -308,7 +308,7 @@ public class Controller
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         Boolean restoreTabs = mPrefs.getBoolean(PreferenceKeys.PREF_RESTORE_TABS, true);
 
-        if (currentTabId == -1) {
+        if (currentTabId == -1 || restoreTabs == false) {
             BackgroundHandler.execute(new PruneThumbnails(mActivity, null));
             if (intent == null) {
                 // This won't happen under common scenarios. The icicle is
