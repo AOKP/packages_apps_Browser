@@ -187,10 +187,10 @@ public class PhoneUi extends BaseUi {
         if (newtab != null && !mUseQuickControls) {
             newtab.setVisible(false);
         }
-        MenuItem incognito = menu.findItem(R.id.incognito_menu_id);
+        /*MenuItem incognito = menu.findItem(R.id.incognito_menu_id);
         if (incognito != null) {
             incognito.setVisible(showingNavScreen() || mUseQuickControls);
-        }
+        }*/
         MenuItem closeOthers = menu.findItem(R.id.close_other_tabs_id);
         if (closeOthers != null) {
             boolean isLastTab = true;
