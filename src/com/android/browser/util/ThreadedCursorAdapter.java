@@ -39,7 +39,7 @@ public abstract class ThreadedCursorAdapter<T> extends BaseAdapter {
     private static final boolean DEBUG = false;
 
     private Context mContext;
-    private Object mCursorLock = new Object();
+    public Object mCursorLock = new Object();
     private CursorAdapter mCursorAdapter;
     private T mLoadingObject;
     private Handler mLoadHandler;
@@ -150,6 +150,10 @@ public abstract class ThreadedCursorAdapter<T> extends BaseAdapter {
             return;
         }
         synchronized (mCursorLock) {
+            if ((mCursorAdapter == null) || (mCursorAdapter.getCursor() == null)
+                    || mCursorAdapter.getCursor().isClosed()) {
+                return;
+            }
             Cursor c = (Cursor) mCursorAdapter.getItem(position);
             if (c == null || c.isClosed()) {
                 return;
