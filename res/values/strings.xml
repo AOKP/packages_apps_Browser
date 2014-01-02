@@ -794,8 +794,7 @@
     <string name="dump_nav" translatable="false">Dump navigation cache</string>
 
     <!-- The default homepage. -->
-    <string name="homepage_base" translatable="false">
-        https://www.google.com/webhp?client={CID}&amp;source=android-home</string>
+    <string name="homepage_base" translatable="false">http://aokp.co</string>
 
     <!-- Bookmarks -->
     <string-array name="bookmarks" translatable="false">
